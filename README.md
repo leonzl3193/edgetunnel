@@ -143,6 +143,7 @@
 | HTTP  | `user:password@127.0.0.1:8080`或`127.0.0.1:8080` |❌| 优先作为访问CFCDN站点的HTTP代理(支持多HTTP代理之间使用`,`或`换行`作间隔) | |
 | SOCKS5  | `user:password@127.0.0.1:1080`或`127.0.0.1:1080` |❌| 优先作为访问CFCDN站点的SOCKS5代理(支持多socks5, socks5之间使用`,`或`换行`作间隔) | [Video](https://www.youtube.com/watch?v=s91zjpw3-P8&t=826s) |
 | GO2SOCKS5  | `blog.cmliussss.com`,`*.ip111.cn`,`*google.com` |❌| 设置`SOCKS5`或`HTTP`变量之后，可设置强制使用socks5访问名单(设置为`*`可作为全局代理) ||
+| NAT64 | `dns64.cmi.ztvi.org`或`2001:67c:2960:6464::/96` |❌| 作为PROXYIP失效后的应急兜底，自行查询[nat64.xyz](https://nat64.xyz/)的`DNS64 Server`或`NAT64 Prefix` ||
 | ADD | `icook.tw:2053#官方优选域名` |❌| 本地优选TLS域名/优选IP(支持多元素之间`,`或`换行`作间隔) ||
 | ADDAPI | [https://raw.github.../addressesapi.txt](https://raw.githubusercontent.com/cmliu/WorkerVless2sub/main/addressesapi.txt) |❌| 优选IP的API地址(支持多元素之间`,`或 换行 作间隔) ||
 | ADDNOTLS | `icook.hk:8080#官方优选域名` |❌| 本地优选noTLS域名/优选IP(支持多元素之间`,`或`换行`作间隔) ||
@@ -161,6 +162,10 @@
 | URL302 | `https://t.me/CMLiussss` |❌| 主页302跳转(支持多url, url之间使用`,`或`换行`作间隔, 小白别用) |  |
 | URL | `https://blog.cmliussss.com` |❌| 主页反代伪装(支持多url, url之间使用`,`或`换行`作间隔, 乱设容易触发反诈) |  |
 | CFPORTS | `2053`,`2096`,`8443` |❌| CF账户标准端口列表 |  |
+| CF_EMAIL | `admin@google.com` |❌| CF账户的邮箱，用于获取 Workers/Pages 请求数 |  |
+| CF_APIKEY | `1234567890abcdef1234567890abcdef` |❌| CF账户的`Global API Key`，用于获取 Workers/Pages 请求数 |  |
+
+> **注意：** 只有 `CF_EMAIL` 和 `CF_APIKEY` 变量同时存在时，订阅时才会返回 CF Workers/Pages 的请求数用量信息。
 
 ## ❗ 注意事项
 
@@ -274,3 +279,4 @@
 - [Stanley-baby](https://github.com/Stanley-baby)
 - [ACL4SSR](https://github.com/ACL4SSR/ACL4SSR/tree/master/Clash/config)
 - [股神](https://t.me/CF_NAT/38889)
+- [Workers/Pages Metrics](https://t.me/zhetengsha/3382)
